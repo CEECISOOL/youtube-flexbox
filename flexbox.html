@@ -14,24 +14,47 @@
     }
 
     .container {
-      background-color: #333;
+      background-color: pink;
       height: 400px;
       width: 100%;
-
       display: flex;
       /* Define que una caja será flexbox de bloque o flexbox de línea */
-      /* flex | inline-flex */
-      flex-direction: row;
+      /* flex(cajas de bloque) | inline-flex(cajas de linea) */
+      /*con el flex los article se van alinear horizontalmente, es decir es en fila. Si hay otra caja(osea 
+      otra section con las clase container que contenga articles, el flex lo va posicionar abajo, es decir se comporta de manera caja en bloque*/
+      /*flex direction es la que le dice la direccion*/
+      flex-direction: row; /*valor default*/
       /* Define el eje principal (main axis) row - x, column - y */
       /* row | row-reverse | column | column-reverse */
+      /*
+      +row queda igual, osea empieza de Flex Item 1 primero(queda del lado izq) y va de izquierda a derecha
+      +row-reverse el Flex Item 1 queda ultimo(queda del lado derecho), o sea va de derecha a izquierda 
+      +column los alinea uno a bajo del otro(empieza Flex Item 1)
+      +column-reverse los alinea uno a bajo del otro pero Flex Item 1 queda ultimo, aparte de que se invierte el orden tambien pasan de estar arriba a estar abajo de el contenedor
+      */
+      /*flex wrap es la que le dice si los elementos van a estar alineados en una sola linea o van a formar varias lineas o columnas por asi decirlo. Al flex-direction y al flex-wrap se conocen como flujo de las cajas*/
       flex-wrap: nowrap;
       /* Define si la caja flexbox envuelve o NO a sus hijos */
       /* nowrap | wrap | wrap-reverse */
+      /*
+      +now rap es su valor por defecto y quiere decir "no envuelvas", el valor por defecto es que todos sus hijos se alinien en una sola fila o en una sola fila(depende de lo que ponemos en el flex wrap). Tambien si los hijos tienen un tamaño especifico de ancho(para fila) o de altura(para columna), no lo va considerar, o sea los va a poner en una sola linea si o si por mas que el tamaño sea mayor(ignora el tamaño)
+      +wrap significa que va a envolver, va agarrar a los contenedores hijos, eso significa que a la hora de envolverlos el tamaño de la caja padre va a considerar el tamaño que tenga cada uno de los elementos hijos y si no logran entrar en una sola linea/columna entonces ahi es donde se van a empezar varias filas/columnas. Cuando es fila, el tamaño a considerar es el ancho, cuando es columna el tamaño a considerar es altura
+      +wrap-reverse es un poco diferente que tener column reverse, alinea uno a bajo del otro a los elementos pero empiezan de la derecha */
+      /*si no queremos poner el flex wrap y direction de manera separada, podemos usar el flex-flow que es el atajo para los dos. El primer valor es para la direccion y el segundo valor para el wrap*/
       flex-flow: row nowrap;
       /* Es un shorthand de flex-direction y flex-wrap */
-      justify-content: flex-start;
+      /*justifity-content Define cómo se alinean los elementos de flexbox según el eje principal, dentro de un contenedor de flexbox*/
+      justify-content: flex-start; /*valor por defecto,los elementos de flexbox se empujan hacia el inicio del eje principal del contenedor.*/
       /* Define la alineación de los hijos en el eje principal (main axis) */
-      /* flex-start | center | flex-end | space-between | space-around | space-evenly */
+      /* flex-start | center | flex-end | space-between | space-around | space-evenly 
+      +center los elementos de la caja flex se centran a lo largo del eje principal del contenedor.
+      +flex-end los elementos de la caja flex se empujan hacia el final del eje principal del contenedor.
+      +space-between el espacio restante se distribuye entre los elementos de flex
+      +space-around el espacio restante se distribuye alrededor de los elementos de flex: esto agrega espacio antes del primer elemento y después del último.
+      +space-evenly los elementos se distribuyen de modo que el espacio entre dos elementos cualesquiera (y el espacio hasta los bordes) sea igual.
+      +left: los artículos se empaquetan hacia el borde izquierdo del contenedor, a menos que eso no tenga sentido con flex-direction, entonces se comporta como start.
+      +right: los artículos se empaquetan hacia el borde derecho del contenedor, a menos que eso no tenga sentido con flex-direction, entonces se comporta como end.
+      */
       align-items: stretch;
       /* Define la alineación de los hijos en el eje transversal (cross axis), dentro de cada línea */
       /* stretch | flex-start | flex-end | center | baseline */
@@ -41,11 +64,11 @@
     }
 
     .item {
-      border: medium solid #999;
+      border: medium solid #666;
       /* width: 20%; */
       /* height: 20%; */
       /* width: 100px; */
-      background-color: #666;
+      background-color: #f07373;
       flex-grow: 0;
       /* Cuando la caja flexbox tenga espacio sobrante, es la habilidad o el factor de crecer, valor por defecto es 0, NO se aceptan valores negativos */
       flex-shrink: 1;
@@ -94,34 +117,6 @@
     <article class="item">Flex Item 4</article>
     <article class="item">Flex Item 5</article>
   </section>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
   <br>
   <br>
   <section class="container">
