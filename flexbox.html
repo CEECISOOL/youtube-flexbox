@@ -55,9 +55,16 @@
       +left: los artículos se empaquetan hacia el borde izquierdo del contenedor, a menos que eso no tenga sentido con flex-direction, entonces se comporta como start.
       +right: los artículos se empaquetan hacia el borde derecho del contenedor, a menos que eso no tenga sentido con flex-direction, entonces se comporta como end.
       */
+      /*align-items define cómo se alinean los elementos de flexbox según el eje transversal, dentro de una línea de un contenedor de flexbox*/
       align-items: stretch;
       /* Define la alineación de los hijos en el eje transversal (cross axis), dentro de cada línea */
-      /* stretch | flex-start | flex-end | center | baseline */
+      /* stretch | flex-start | flex-end | center | baseline 
+      +stretch es el valor por defecto, los elementos de flexbox se extenderán a lo largo de todo el eje transversal. Por defecto, el eje transversal es vertical. Esto significa que los elementos de flexbox llenarán todo el espacio vertical.
+      +flex-start los elementos de flexbox se alinean al comienzo del eje transversal. Por defecto, el eje transversal es vertical. Esto significa que los elementos de flexbox se alinearán verticalmente en la parte superior.
+      +flex-end los elementos de flexbox están alineados al final del eje transversal. Por defecto, el eje transversal es vertical. Esto significa que los elementos de flexbox se alinearán verticalmente en la parte inferior.
+      +center los elementos de flexbox están alineados en el centro del eje transversal. Por defecto, el eje transversal es vertical. Esto significa que los elementos de flexbox estarán centrados verticalmente.
+      +baseline los elementos de flexbox se alinean en la línea de base del eje transversal. Por defecto, el eje transversal es vertical. Esto significa que los elementos de flexbox se alinearán para que la línea de base de su texto se alinee a lo largo de una línea horizontal.
+      */
       align-content: flex-start;
       /* Define la alineación de los hijos en el eje transversal (cross axis), NO funciona cuando los hijos están en UNA sóla línea (es decir cuando flex-wrap tiene el valor de nowrap, NO FUNCIONA) */
       /* flex-start | flex-end | center | space-between | space-around | space-evenly | stretch */
